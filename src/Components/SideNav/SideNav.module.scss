@@ -1,0 +1,37 @@
+.sideNavContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 20%;
+    background-color: rgba(0, 0, 0, 0.9);
+
+    .logoContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 30px;
+
+        img {
+            width: auto;
+            height: 20vh;
+        }
+    }
+
+    .punchline {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 60%;
+        margin: 0 auto;
+        padding-top: 20px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-align: center;
+        color: #888;
+    }
+}

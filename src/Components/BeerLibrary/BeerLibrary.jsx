@@ -10,15 +10,6 @@ const BeerLibrary = (props) => {
             <Card beer={beer} />
     )
 
-    // const renderBeers = () => {
-    //     beers.map(beer => {
-    //         <Card />
-    //     })
-    // }
-    // const grabBeerCard = () => {
-    //     <Card />  
-    // }
-
     return (
         <div className={styles.cardLibraryContainer}>
             {beers.map(renderBeerCards)}  

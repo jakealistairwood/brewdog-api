@@ -1,0 +1,23 @@
+@import '../../Assets/Styles/variables';
+
+.searchBarContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    input {
+        width: 70%;
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid #1e9fc2;
+        color: #1e9fc2;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 700;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}

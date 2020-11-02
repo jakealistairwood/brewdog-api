@@ -2,21 +2,31 @@ import React from 'react';
 import styles from './Card.module.scss';
 
 const Card = (props) => {
+
+    const { image_url, 
+            name, 
+            tagline, 
+            description, 
+            first_brewed, 
+            abv} = props.beer;
+
     return (
         <div className={styles.cardContainer}>
             <div className={styles.imageContainer}>
-                <img src={props.beer.image_url} alt="brewdog-beer-image"/>
+                <img src={image_url} alt="brewdog-beer"/>
             </div>
-            <header className={styles.cardHeader}>
-                <h2>{props.beer.name}</h2>
-                <h3>{props.beer.tagline}</h3>
-                <p>{props.beer.description}
-                </p>
-            </header>
-            <footer className={styles.cardFooter}>
-                <p>First brewed: {props.beer.first_brewed}</p>
-                <p>Abv: {props.beer.abv}%</p>
-            </footer>
+            <div className={styles.contentContainer}>
+                <header className={styles.cardHeader}>
+                    <h2 className={styles.beerName}>{name}</h2>
+                    <h3 className={styles.beerSubHeader}>{tagline}</h3>
+                    <p className={styles.beerDescription}>{description}
+                    </p>
+                </header>
+                <footer className={styles.cardFooter}>
+                    <p>First brewed: {first_brewed}</p>
+                    <p>Abv: {abv}%</p>
+                </footer>
+            </div>
         </div>
     )
 }

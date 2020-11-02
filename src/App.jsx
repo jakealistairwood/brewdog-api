@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import BeerLibrary from './Components/BeerLibrary';
+import SideNav from './Components/SideNav';
+import styles from './App.scss';
 
 const App = () => {
 
@@ -17,7 +19,6 @@ const App = () => {
   // Prevent infinite loop of beers being rendered
   useEffect(() => {
     getBeerData();
-    console.log("Use effect was called");
   }, []);
 
   const getBeersByName = (searchTerm) => {
@@ -30,8 +31,9 @@ const App = () => {
 
   return (
     <div>
-      <h1>Brewdog Api</h1>
-      <p>Grab yourself one of our legendary craft beers!</p>
+      {/* <h1>Brewdog Api</h1>
+      <p>Grab yourself one of our legendary craft beers!</p> */}
+      <SideNav updateSearchField={getBeersByName} />
       <BeerLibrary beers={beers} />
     </div>
   )
