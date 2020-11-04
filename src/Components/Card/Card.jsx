@@ -10,6 +10,10 @@ const Card = (props) => {
             first_brewed, 
             abv} = props.beer;
 
+    const limitBeerDescription = () => {
+        const grabBeerDescription = document.querySelector('.beerDescription').innerHTML()
+    }
+
     return (
         <div className={styles.cardContainer}>
             <div className={styles.imageContainer}>
@@ -21,10 +25,13 @@ const Card = (props) => {
                     <h3 className={styles.beerSubHeader}>{tagline}</h3>
                     <p className={styles.beerDescription}>{description}
                     </p>
+                    <p className={styles.beerBrewDate}>First brewed: {first_brewed}</p>
                 </header>
                 <footer className={styles.cardFooter}>
-                    <p>First brewed: {first_brewed}</p>
-                    <p>Abv: {abv}%</p>
+                    <p className={styles.beerABV}>ABV: {abv}%</p>
+                    <button className={styles.bdShopBtn}>
+                        <a href="https://www.brewdog.com/uk/shop/beer">BUY NOW!</a>
+                    </button>
                 </footer>
             </div>
         </div>

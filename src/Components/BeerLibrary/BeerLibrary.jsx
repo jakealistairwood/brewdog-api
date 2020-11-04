@@ -11,9 +11,9 @@ const BeerLibrary = (props) => {
     )
 
     return (
-        <div className={styles.cardLibraryContainer}>
+        <section className={styles.cardLibraryContainer}>
             {beers.map(renderBeerCards)}  
-        </div>
+        </section>
     )
 }
 

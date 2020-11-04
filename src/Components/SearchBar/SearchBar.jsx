@@ -8,7 +8,7 @@ const SearchBar = (props) => {
     return (
         <div className={styles.searchBarContainer}>
             <label htmlFor="searchbar"></label>
-            <input type="text" id="searchbar" placeholder="search" onInput={e => updateSearchField(e.target.value)} />
+            <input type="text" id="searchbar" placeholder="search..." onInput={e => updateSearchField(e.target.value)} />
         </div>
     )
 }

@@ -3,7 +3,7 @@
     flex-direction: column;
     width: 100%;
     margin: 0 auto;
-    background-color: rgba(30, 159, 194, 0.5);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
 
     .imageContainer {
         display: flex;
@@ -28,18 +28,53 @@
             .beerSubHeader {
                 color: #1e9fc2;
             }
+
+            .beerDescription {
+                text-align: justify;
+            }
         }
 
-        footer {
+        .cardFooter {
             display: flex;
+            flex-direction: row;
             align-items: flex-end;
             width: 100%;
             justify-content: space-between;
+            margin-top: 20px;
 
-            .cardFooter {
+            .bdShopBtn {
                 display: flex;
-                flex-direction: row;
-                width: 100%;
+                align-items: center;
+                justify-content: center;
+                width: 120px;
+                height: 30px;
+                background-color: black;
+                font-family: 'Oswald', sans-serif;
+                font-size: 1rem;
+                border: none;
+                transform: scale(1);
+                cursor: pointer;
+
+                a {
+                    color: #FFF;
+                    text-decoration: none;
+                }
+
+                &:hover {
+                    transform: scale(1.02);
+                }
+            }
+
+            .beerABV {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 3px solid black;
+                border-radius: 20px;
+                width: 100px;
+                height: 30px;
+                font-family: 'Oswald', sans-serif;
+                font-weight: 700;
             }
         }
     }
