@@ -22,11 +22,17 @@ const App = () => {
   }, []);
 
   const getBeersByName = (searchTerm) => {
-    fetch('https://api.punkapi.com/v2/beers?beer_name=' + searchTerm)
+
+    // Prevents error occuring when searchbar is emptied
+    if (searchTerm === "") {
+      return
+    } else {
+      fetch('https://api.punkapi.com/v2/beers?beer_name=' + searchTerm)
       .then((response) => response.json())
       .then((response) => {
         setBeers(response);
       })
+    }
   }
 
   return (
