@@ -35,3 +35,41 @@
         color: #888;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .sideNavContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        height: 16vh;
+        width: 100%;
+        z-index: 1000;
+        background-color: #171919;
+
+        .logoContainer {
+            display: flex;
+            height: auto;
+            width: 50px;
+            margin-left: 20px;
+
+            img {
+                width: 50px;
+                height: auto;
+            }
+        }
+        .punchline {
+            background-color: cornflowerblue;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+@media (min-width: 501px) and (max-width: 767px) {
+    .sideNavContainer {
+        display: flex;
+        width: 200px;
+    }
+}

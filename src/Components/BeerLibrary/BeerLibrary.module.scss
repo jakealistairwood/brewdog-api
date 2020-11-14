@@ -1,9 +1,20 @@
 .cardLibraryContainer {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    // grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     grid-gap: 1em;
     width: 80%;
     margin: 0 auto;
     margin-left: 20%;
     margin-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .cardLibraryContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 20vh;
+    }
 }
