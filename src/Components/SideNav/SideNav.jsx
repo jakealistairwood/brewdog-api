@@ -6,7 +6,7 @@ import Logo from '../../Assets/Img/brewdog-logo.png';
 
 const SideNav = (props) => {
 
-    const { updateSearchField } = props;
+    const { getBeerData, setBeerName } = props;
 
     return (
         <div className={styles.sideNavContainer}>
@@ -15,7 +15,7 @@ const SideNav = (props) => {
             </div>
             <p className={styles.punchline}>Grab yourself one of our legendary craft beers!</p>
             <div>
-                <SearchBar updateSearchField={updateSearchField} />    
+                <SearchBar getBeerData={getBeerData} setBeerName={setBeerName} />    
                 <FilterOptions />
             </div>
         </div>

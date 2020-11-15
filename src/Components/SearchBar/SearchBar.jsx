@@ -3,12 +3,15 @@ import styles from './SearchBar.module.scss';
 
 const SearchBar = (props) => {
 
-    const { updateSearchField } = props;
+    const { setBeerName, getBeerData } = props;
 
     return (
         <div className={styles.searchBarContainer}>
             <label htmlFor="searchbar"></label>
-            <input type="text" id="searchbar" placeholder="search..." onInput={e => updateSearchField(e.target.value)} />
+            <input type="text" id="searchbar" placeholder="search..." onInput={e => {
+                setBeerName(e.target.value);
+                getBeerData();
+            }}/>
         </div>
     )
 }
