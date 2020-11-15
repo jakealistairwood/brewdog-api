@@ -6,7 +6,7 @@ import Logo from '../../Assets/Img/brewdog-logo.png';
 
 const SideNav = (props) => {
 
-    const { getBeerData, setBeerName } = props;
+    const { getBeerData, setBeerName, isClassic, setIsClassic } = props;
 
     return (
         <div className={styles.sideNavContainer}>
@@ -14,9 +14,9 @@ const SideNav = (props) => {
                 <img src={Logo} alt="brewdog-logo"></img>
             </div>
             <p className={styles.punchline}>Grab yourself one of our legendary craft beers!</p>
-            <div>
+            <div className={styles.inputContainer}>
                 <SearchBar getBeerData={getBeerData} setBeerName={setBeerName} />    
-                <FilterOptions />
+                <FilterOptions getBeerData={getBeerData} isClassic={isClassic} setIsClassic={setIsClassic} />
             </div>
         </div>
     )

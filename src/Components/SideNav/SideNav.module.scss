@@ -34,6 +34,11 @@
         text-align: center;
         color: #888;
     }
+
+    .inputContainer {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 @media screen and (max-width: 768px) {
