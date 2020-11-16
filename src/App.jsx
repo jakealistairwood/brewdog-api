@@ -8,6 +8,11 @@ const App = () => {
   const [ beers, setBeers ] = useState([]);
   const [ beerName, setBeerName ] = useState();
   const [ isClassic, setIsClassic] = useState(false);
+  const [ isLight, setIsLight ] = useState(false);
+  const [ isMedium, setIsMedium ] = useState(false);
+  const [ isStrong, setIsStrong ] = useState(false);
+  const [ isAlcoholFree, setIsAlcoholFree ] = useState(false);
+  const [ isExtraStrong, setIsExtraStrong ] = useState(false);
 
   const getBeerData = () => {
 
@@ -16,8 +21,17 @@ const App = () => {
 
     const searchBeersByName = beerName ? `&beer_name=${beerName}` : "";
 
+    const alcoholFree = isAlcoholFree ? `&abv_lt=0.6` : "";
 
-    const url = `https://api.punkapi.com/v2/beers?per_page=50${searchBeersByName}${classicBeer}`;
+    const lightBeers = isLight ? `&abv_lt=4.5` : "";
+
+    const mediumBeers = isMedium ? `&abv_gt=4.5&abv_lt=7` : "";
+
+    const strongBeers = isStrong ? `&abv_gt=7.1&abv_lt=10` : "";
+
+    const extraStrong = isExtraStrong ? `&abv_gt=10` : "";
+
+    const url = `https://api.punkapi.com/v2/beers?per_page=50${searchBeersByName}${classicBeer}${lightBeers}${mediumBeers}${strongBeers}${extraStrong}${alcoholFree}`;
 
     fetch(url)
       .then((response) => response.json())
@@ -28,7 +42,7 @@ const App = () => {
   // Prevent infinite loop of beers being rendered
     useEffect(() => {
         getBeerData();
-    }, []);
+    }, [isClassic, isLight, isMedium, isStrong, isAlcoholFree, isExtraStrong]);
 
   return (
     <div>
@@ -38,7 +52,18 @@ const App = () => {
                isClassic={isClassic} 
                setIsClassic={setIsClassic}
                beerName={beerName}
-               setBeerName={setBeerName} 
+               setBeerName={setBeerName}
+               isLight={isLight}
+               setIsLight={setIsLight}
+               isMedium={isMedium}
+               setIsMedium={setIsMedium}
+               isStrong={isStrong}
+               setIsStrong={setIsStrong}
+               isAlcoholFree={isAlcoholFree}
+               setIsAlcoholFree={setIsAlcoholFree}
+               isExtraStrong={isExtraStrong}
+               setIsExtraStrong={setIsExtraStrong}
+
       />
       <BeerLibrary beers={beers} />
     </div>
