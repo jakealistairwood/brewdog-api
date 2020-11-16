@@ -22,9 +22,9 @@ const FilterOptions = (props) => {
 
     const toggleInputColour = inputActive ? styles.active : "";
 
-    useEffect(() => {
-        setInputActive(!inputActive);
-    }, []);
+    // useEffect(() => {
+    //     setInputActive(!inputActive);
+    // }, []);
 
     return (
         <>
@@ -35,9 +35,10 @@ const FilterOptions = (props) => {
                 setInputActive(!inputActive)
             }
             } />
-            <input type="button" value="Light" className={`${styles.inputBtn}`} onClick={() => {
+            <input type="button" value="Light" className={`${styles.inputBtn} ${toggleInputColour}`} onClick={() => {
                 setIsLight(!isLight)
                 getBeerData();
+                setInputActive(!inputActive)
             }
             } />
             <input type="button" value="Medium" className={`${styles.inputBtn}`} onClick={() => {

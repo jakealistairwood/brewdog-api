@@ -48,7 +48,7 @@
         align-items: center;
         position: fixed;
         top: 0;
-        height: 16vh;
+        height: 20vh;
         width: 100%;
         z-index: 1000;
         background-color: #171919;
@@ -56,13 +56,21 @@
         .logoContainer {
             display: flex;
             height: auto;
-            width: 150px;
+            width: 20%;
             margin: 0;
 
             img {
                 width: 50px;
                 height: auto;
             }
+        }
+        
+        .punchline {
+            display: none;
+        }
+
+        .inputContainer {
+            width: 80%;
         }
             
     }

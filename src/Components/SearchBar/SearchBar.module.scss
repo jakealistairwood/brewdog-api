@@ -22,3 +22,15 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .searchBarContainer {
+        margin: 0;
+
+        input {
+            width: 85%;
+            height: 20px;
+            margin-bottom: 10px;
+        }
+    }
+}
